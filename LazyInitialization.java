@@ -5,7 +5,7 @@ class LazyInstance{
 	int data1,data2,sum;
 	
 	//OBJECT OF CLASS.
-	private static LazyInstance lazy = new LazyInstance();
+	private static LazyInstance lazy;
 	
 	//CONSTRUCTOR.
 	private LazyInstance() {};
@@ -13,6 +13,8 @@ class LazyInstance{
 	//METHOD WHICH RETURN CLASS OF AN OBJECT.
 	public static LazyInstance getInstance()
 	{
+		if(lazy == null)
+			lazy = new LazyInstance();
 		return lazy;
 	}
 	
